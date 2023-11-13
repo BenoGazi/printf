@@ -14,9 +14,9 @@ int _printf(const char *format, ...)
 
 	if (format == NULL)
 	{
-		return(1);
-		exit(98);
+		return (1);
 	}
+
 	va_start(args, format);
 	while (*format != '\0')
 	{
@@ -30,16 +30,16 @@ int _printf(const char *format, ...)
 			format++;
 			if (*format == 'c')
 			{	
-				t = va_arg(args, int);
-				_putchar(t);
+				b = va_arg(args, int);
+				_putchar(b);
 				char_count++;
 			}
 			else if (*format == 's')
 			{
 				t = va_arg(args, char *);
-				while (*s != '/0')
+				while (*t != '/0')
 				{
-					_putchar(*s);
+					_putchar(*t);
 					char_count++;
 					t++;
 				}
