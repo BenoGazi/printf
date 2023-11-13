@@ -1,7 +1,7 @@
 #include "main.h"
 #include <stdio.h>
-
-/**_printf - handles format specifiers, a, s, and %
+#include <stdarg.h>
+/**_printf - handles format specifiers, c, s, and %
  * @format: First parameter
  * Return: Success
  */
@@ -9,8 +9,8 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	char *i, j;
-	int char_count;
+	char *i, *j;
+	int char_count = 0;
 
 	if (format == NULL)
 	{
