@@ -13,7 +13,7 @@ int handle_int_d_i(va_list args)
 	int int_count = 0;
 
 	i = (n < 0) ? -n : n;
-	d = (n < 0) ? -n : n;
+	d = i;
 
 	if (n < 0)
 	{
@@ -22,7 +22,8 @@ int handle_int_d_i(va_list args)
 	}
 	while (d / 10 != 0)
 	{
-		int_count += handle_int_i(args);
+		d /= 10;
+		int_count++;
 	}
-	return (int_count);
+	return (int_count + 1);
 }
