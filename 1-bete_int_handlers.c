@@ -1,18 +1,18 @@
 #include "main.h"
 
 /**
- * handle int_b - prints an integer value
- * @b: integer param
- * Return: int
+ * handle_int_i - prints an integer value
+ * @args: integer argument
+ * Return: number of characters printed
  */
 
-int int_b(va_list args)
+int handle_int_i(va_list args)
 {
 	int n = va_arg(args, int);
-	int unsigned int b;
+	unsigned int i;
 	int int_count = 0;
 
-	b = (n < 0) ? -n : n;
+	i = (n < 0) ? -n : n;
 	if (n < 0)
 	{
 		_putchar('-');
@@ -20,9 +20,9 @@ int int_b(va_list args)
 	}
 	if (n / 10 != 0)
 	{
-		int_count += int_b(args);
+		int_count += handle_int_i(args);
 	}
-	_putchar((b % 10) + '0');
+	_putchar((i % 10) + '0');
 	int_count++;
 	return (int_count);
 }
