@@ -6,5 +6,7 @@
 #include <unistd.h>
 
 int _printf(const char *format, ...);
+int handle_int_d_i(va_list args)
+
 
 #endif /* MAIN_H */
