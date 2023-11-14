@@ -1,6 +1,7 @@
 #include "main.h"
 #include <stdio.h>
 #include <stdarg.h>
+
 /**_printf - handles format specifiers, c, s, and %
  * @format: First parameter
  * Return: Success
@@ -9,12 +10,12 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	char *b, *t;
+	char b, *t;
 	int char_count = 0;
 
 	if (format == NULL)
 	{
-		return (1);
+		return (-1);
 	}
 
 	va_start(args, format);
@@ -37,7 +38,7 @@ int _printf(const char *format, ...)
 			else if (*format == 's')
 			{
 				t = va_arg(args, char *);
-				while (*t != '/0')
+				while (*t != '\0')
 				{
 					_putchar(*t);
 					char_count++;
