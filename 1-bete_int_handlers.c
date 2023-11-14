@@ -20,17 +20,9 @@ int handle_int_d_i(va_list args)
 		_putchar('-');
 		int_count++;
 	}
-	do
-	{
-		_putchar((i % 10) + 0);
-		int_count++;
-	}
-	while (i != 0);
-
-	if (d / 10 != 0)
+	while (d / 10 != 0)
 	{
 		int_count += handle_int_i(args);
 	}
-	int_count++;
 	return (int_count);
 }
