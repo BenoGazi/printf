@@ -24,7 +24,7 @@ int _printf(const char *format, ...)
 		//check for format specifier or end of format string
 		if (*format != '%' && *(format + 1) != '\0')
 		{
-			//if its a regular characteran not a format specifier...
+			//if its a regular character and not a format specifier...
 			_putchar(*format);
 			char_count++;
 		}
