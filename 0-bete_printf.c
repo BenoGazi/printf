@@ -13,7 +13,7 @@ int _printf(const char *format, ...)
 {
 	va_list args;
 	int char_count = 0;
-	unique_id ID[6] = {
+	unique_id ID[] = {
 		{"%c", handle_c}, {"%s", handle_s}, {"%d", handle_int_d_i}, {"%%", handle_per_cent}, {"%i", handle_int_d_i}, {"%u", handle_u}
 	};
 

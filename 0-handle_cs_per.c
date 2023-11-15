@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdarg.h>
 
 /**
  * handle_c - prints a character
@@ -12,7 +13,7 @@ int handle_c(va_list args)
 	
 	pr_char = va_arg(args, int);
 	_putchar(pr_char);
-	return(0);
+	return(1);
 }
 
 /**
@@ -27,13 +28,17 @@ int handle_s(va_list args)
 	int i;
 
 	pr_str = va_arg(args, char *);
+	if (pr_str == NULL)
+	{
+		return (-1);
+	}
 	i = 0;
 	while (pr_str[i] != '\0')
 	{
-	_putchar(pr_str[i]);
-	i++;
+		_putchar(pr_str[i]);
+		i++;
 	}
-	return(0);
+	return(1);
 }
 
 /**
@@ -45,5 +50,5 @@ int handle_s(va_list args)
 int handle_per_cent(void)
 {
 	_putchar('%');
-	return(0);
+	return(1);
 }
