@@ -13,24 +13,30 @@ int _printf(const char *format, ...)
 	char b, *t;
 	int char_count = 0;
 
-	if (format == NULL) //Indicate an error if format/input is empty
+	if (format == NULL)
 	{
 		return (-1);
 	}
 
-	va_start(args, format); //initiates the variadic funtion with format
+	va_start(args, format);
 	while (*format != '\0')
 	{
-		//check for format specifier or end of format string
+		/**
+		 * check for format specifier or end of format string
+		 */
 		if (*format != '%' && *(format + 1) != '\0')
 		{
-			//if its a regular character and not a format specifier...
+			/**
+			 * if its a regular character and not a format specifier...
+			 */
 			_putchar(*format);
 			char_count++;
 		}
 		else
 		{
-			//move to the next character afer the '%' sign.
+			/**
+			 * move to the next character afer the '%' sign.
+			 */
 			format++;
 			if (*format == 'c')
 			{	
@@ -50,15 +56,21 @@ int _printf(const char *format, ...)
 			}
 			else if (*format == '%')
 			{
-				//print a '%' sign
+				/**
+				 * print a '%' sign
+				 */
 				_putchar('%');
 				char_count++;
 			}
 		}
-		//Move to the next character
+		/**
+		 * Move to the next character
+		 */
 			format++;
 	}
-	//end the variadic arguments and return the results
+	/**
+	 * end the variadic arguments and return the results
+	 */
 	va_end(args);
 	return (char_count);
 }

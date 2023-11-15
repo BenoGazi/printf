@@ -1,4 +1,4 @@
-#include "main.c"
+#include "main.h"
 
 /**
  * handle_u - handles u specifier
@@ -8,11 +8,17 @@
 
 int handle_u(va_list args)
 {
-	//extract unsigned in argument
-	n = va_arg(args, unsigned int);
+	int n;
 	unsigned int i;
-	//character counter
-	int int_count = 0;
+	int int_count;
+	/**
+	 * extract unsigned in argument
+	 */
+
+	n = va_arg(args, unsigned int);
+	/**character counter
+	 */
+	int_count = 0;
 
 	/**if negative, converts to positive for processing and 
 	 *print '-' for negative numbers
@@ -33,8 +39,10 @@ int handle_u(va_list args)
 		return (1);
 
 	}
-	//loops through each digit of the element
-	//print the digit and move to the next digit
+	/**
+	 * loops through each digit of the element
+	 *print the digit and move to the next digit
+	 */
 	while (i != 0)
 	{
 		int_count++;
