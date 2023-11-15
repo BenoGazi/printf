@@ -3,13 +3,12 @@
 /**
  * handle_o - function that handles o specifier
  * @args: argument count
- * Return: int
+ * Return: number of characters printed
  */
 
 int handle_o(va_list args)
 {
-	unsigned int n = va_arg(unsigned int, args);
-	unsigned i;
+	unsigned int n = va_arg(args, unsigned int);
 	int o_count = 0;
 
 	if (n == 0)
