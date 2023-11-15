@@ -1,76 +1,55 @@
 #include "main.h"
 #include <stdio.h>
+#include <string.h>
 #include <stdarg.h>
 
-/**_printf - handles format specifiers, c, s, and %
- * @format: First parameter
- * Return: Success
+/**
+ * _printf - main function
+ * @format: format string
+ * Return: success
  */
 
 int _printf(const char *format, ...)
 {
 	va_list args;
-	char b, *t;
 	int char_count = 0;
+	unique_id ID[6] = {
+		{"%c", handle_c}, {"%s", handle_s}, {"%d", handle_int_d_i}, {"%%", handle_per_cent}, {"%i", handle_int_d_i}, {"%u", handle_u}
+	};
 
 	if (format == NULL)
 	{
 		return (-1);
 	}
-
 	va_start(args, format);
 	while (*format != '\0')
 	{
-		/**
-		 * check for format specifier or end of format string
-		 */
-		if (*format != '%' && *(format + 1) != '\0')
+		if (*format != '%' || *(format + 1) == '\0')
 		{
-			/**
-			 * if its a regular character and not a format specifier...
-			 */
 			_putchar(*format);
 			char_count++;
 		}
 		else
 		{
-			/**
-			 * move to the next character afer the '%' sign.
-			 */
-			format++;
-			if (*format == 'c')
-			{	
-				b = va_arg(args, int);
-				_putchar(b);
-				char_count++;
-			}
-			else if (*format == 's')
+			int i = 0;
+			while (i < ID_COUNT)
 			{
-				t = va_arg(args, char *);
-				while (*t != '\0')
+				if (ID[i].key[1] == format[1])
 				{
-					_putchar(*t);
-					char_count++;
-					t++;
+					char_count += ID[i].id(args);
+					break;
 				}
+				i++;
 			}
-			else if (*format == '%')
+			if (i == ID_COUNT)
 			{
-				/**
-				 * print a '%' sign
-				 */
-				_putchar('%');
+				_putchar(*format);
 				char_count++;
 			}
-		}
-		/**
-		 * Move to the next character
-		 */
 			format++;
+		}
+		format++;
 	}
-	/**
-	 * end the variadic arguments and return the results
-	 */
 	va_end(args);
 	return (char_count);
 }
