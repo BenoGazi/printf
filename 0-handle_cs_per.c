@@ -10,10 +10,10 @@
 int handle_c(va_list args)
 {
 	char pr_char;
-	
+
 	pr_char = va_arg(args, int);
 	_putchar(pr_char);
-	return(1);
+	return (1);
 }
 
 /**
@@ -38,17 +38,16 @@ int handle_s(va_list args)
 		_putchar(pr_str[i]);
 		i++;
 	}
-	return(1);
+	return (1);
 }
 
 /**
- * handle_% - handles the percent placeholder
- * @args: arguments
+ * handle_per_cent - handles the percent sign
  * Return: success
  */
 
 int handle_per_cent(void)
 {
 	_putchar('%');
-	return(1);
+	return (1);
 }
