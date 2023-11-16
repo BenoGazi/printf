@@ -38,7 +38,7 @@ int handle_s(va_list args)
 		_putchar(pr_str[i]);
 		i++;
 	}
-	return (1);
+	return (i);
 }
 
 /**

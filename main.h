@@ -11,7 +11,7 @@ typedef struct UniqueID
 	int (*id)();
 } unique_id;
 
-#define ID_COUNT 7
+#define ID_COUNT 10
 
 int _printf(const char *format, ...);
 int handle_int_d_i(va_list args);

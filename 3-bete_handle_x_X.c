@@ -7,11 +7,11 @@
  * Return: number of characters printed
  */
 
-int handle_x_X(va_list args, int uppercase)
+int handle_x_X(va_list args, int is_uppercase)
 {
-	unsigned int n = va_arg(unsigned int, args);
+	unsigned int n = va_arg(args, unsigned int);
 	int x_X_count = 0;
-	char *digits = "0123456789abcdef" : "0123456789ABCDEF"
+	char *digits = is_uppercase ? "0123456789abcdef" : "0123456789ABCDEF";
 
 	if (n == 0)
 	{
