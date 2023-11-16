@@ -28,6 +28,6 @@ int handle_s(va_list args);
 int handle_per_cent(void);
 int handle_b(va_list args);
 int handle_o(va_list args);
-int handle_x_X(va_list args, int uppercase);
+int handle_x_X(va_list args);
 
 #endif /* MAIN_H */

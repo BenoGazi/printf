@@ -10,8 +10,10 @@ int handle_u(va_list args)
 {
 	int n;
 	unsigned int i;
-	char buffer[BUFFER_SIZE];
+	char buffer[BUFF_SIZE];
 	int int_count;
+	unsigned int index;
+	unsigned int b;
 	/**
 	 * extract unsigned in argument
 	 */
@@ -34,16 +36,17 @@ int handle_u(va_list args)
 		_putchar('0');
 		return (1);
 	}
-	int index = sizeof(buffer) - 1;
+	index = sizeof(buffer) - 1;
 
 	while (i != 0)
 	{
-		int_count++;
 		buffer[index--] = (i % 10 + '0');
 		i /= 10;
+		index--;
+		int_count++;
 	}
 
-	for (int b = index + 1; b < sizeof(buffer); b++)
+	for (b = index + 1; b < sizeof(buffer); b++)
 	{
 		_putchar(buffer[b]);
 	}
