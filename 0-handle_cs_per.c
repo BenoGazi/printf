@@ -32,11 +32,23 @@ int handle_s(va_list args)
 	{
 		return (-1);
 	}
-	i = 0;
+	char buffer[BUFF_SIZE];
+	int i = 0;
+
 	while (pr_str[i] != '\0')
 	{
 		_putchar(pr_str[i]);
 		i++;
+
+		if (i == BUFF_SIZE - 1 || pr_str[i] == '\0')
+		{
+			buffer[i] = '\0';
+			for (int b = 0; buffer[b] != '\0'; b++)
+			{
+				_putchar(buffer[b]);
+			}
+			i = 0;
+		}
 	}
 	return (i);
 }

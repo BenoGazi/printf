@@ -8,7 +8,8 @@
 
 int handle_b(va_list args)
 {
-	unsigned int n, i;
+	unsigned int n;
+	char buffer[BUFF_SIZE];
 	int b_count = 0;
 
 	n = va_arg(args, unsigned int);
@@ -17,16 +18,17 @@ int handle_b(va_list args)
 		_putchar('0');
 		return (1);
 	}
-	i = n;
-	while (i > 0)
+	index = sizeof(buffer) - 1;
+
+	while (n > 0)
 	{
-		i /= 2;
+		buffer[index--] = (n % 2) + '\0';
+		n /= 2;
 		b_count++;
 	}
-	while (b_count > 0)
+	for (int i = index + 1; i < sizeof(buffer); i++)
 	{
-		b_count--;
-		_putchar((n >> b_count) & 1 ? '1' : '0');
+		_putchar(buffer[i]);
 	}
-	return (n == 0 ? 1 : b_count);
+	return (b_count);
 }
