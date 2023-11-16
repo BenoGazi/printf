@@ -3,7 +3,12 @@
 /**
  * handle_x_X - function that handles x and X specifiers
  * @args: argument count
+<<<<<<< HEAD
  * @is_uppercase: indicates uppercase (1) or lowercase (0)
+=======
+ * @is_uppercase: indicates
+ * uppercase (1) or lowercase (0)
+>>>>>>> 3bac48f68cc4b97d032bd8fb213f68f0422cb483
  * Return: number of characters printed
  */
 

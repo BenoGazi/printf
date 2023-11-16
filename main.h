@@ -5,6 +5,11 @@
 #include <stdarg.h>
 #include <unistd.h>
 
+/**
+ *struct UniqueID - struct type
+ *@key: placeholder checker
+ *@id: function checker
+ */
 typedef struct UniqueID
 {
 	char *key;
