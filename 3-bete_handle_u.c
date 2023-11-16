@@ -16,13 +16,8 @@ int handle_u(va_list args)
 	 */
 
 	n = va_arg(args, unsigned int);
-	/**character counter
-	 */
 	int_count = 0;
 
-	/**if negative, converts to positive for processing and 
-	 *print '-' for negative numbers
-	 */
 	if (n < 0)
 	{
 		i = -n;
@@ -37,17 +32,12 @@ int handle_u(va_list args)
 	{
 		_putchar('0');
 		return (1);
-
 	}
-	/**
-	 * loops through each digit of the element
-	 *print the digit and move to the next digit
-	 */
 	while (i != 0)
 	{
 		int_count++;
 		_putchar(i % 10 + '0');
 		i /= 10;
 	}
-	return(int_count);
+	return (int_count);
 }
