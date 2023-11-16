@@ -25,15 +25,15 @@ int handle_c(va_list args)
 int handle_s(va_list args)
 {
 	char *pr_str;
-	int i;
+	char buffer[BUFF_SIZE];
+	int i = 0;
+	int b;
 
 	pr_str = va_arg(args, char *);
 	if (pr_str == NULL)
 	{
 		return (-1);
 	}
-	char buffer[BUFF_SIZE];
-	int i = 0;
 
 	while (pr_str[i] != '\0')
 	{
@@ -43,9 +43,11 @@ int handle_s(va_list args)
 		if (i == BUFF_SIZE - 1 || pr_str[i] == '\0')
 		{
 			buffer[i] = '\0';
-			for (int b = 0; buffer[b] != '\0'; b++)
+			b = 0;
+			while (buffer[b] != '\0')
 			{
 				_putchar(buffer[b]);
+				b++;
 			}
 			i = 0;
 		}
