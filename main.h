@@ -12,6 +12,7 @@ typedef struct UniqueID
 } unique_id;
 
 #define ID_COUNT 10
+#define BUFF_SIZE 1024
 
 int _printf(const char *format, ...);
 int handle_int_d_i(va_list args);
