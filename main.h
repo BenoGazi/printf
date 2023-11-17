@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <stdarg.h>
 #include <unistd.h>
-
+#include <limits.h>
 /**
  *struct UniqueID - struct type
  *@key: placeholder checker

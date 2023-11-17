@@ -31,7 +31,7 @@ int handle_int_d_i(va_list args)
 		d /= 10;
 		int_count++;
 	}
-	for (t = index + 1; t < sizeof(buffer); t++)
+	for (t = index + 1; t < (int)sizeof(buffer); t++)
 	{
 		_putchar(buffer[t]);
 	}

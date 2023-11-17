@@ -11,6 +11,8 @@ int handle_b(va_list args)
 	unsigned int n;
 	char buffer[BUFF_SIZE];
 	int b_count = 0;
+	int index;
+	int i;
 
 	n = va_arg(args, unsigned int);
 	if (n == 0)
@@ -22,11 +24,11 @@ int handle_b(va_list args)
 
 	while (n > 0)
 	{
-		buffer[index--] = (n % 2) + '\0';
+		buffer[index--] = (n % 2) + '0';
 		n /= 2;
 		b_count++;
 	}
-	for (int i = index + 1; i < sizeof(buffer); i++)
+	for (i = index + 1; i < (int)sizeof(buffer); i++)
 	{
 		_putchar(buffer[i]);
 	}

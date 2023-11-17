@@ -25,9 +25,8 @@ int handle_c(va_list args)
 int handle_s(va_list args)
 {
 	char *pr_str;
-	char buffer[BUFF_SIZE];
 	int i = 0;
-	int b;
+	int char_count = 0;
 
 	pr_str = va_arg(args, char *);
 	if (pr_str == NULL)
@@ -38,21 +37,15 @@ int handle_s(va_list args)
 	while (pr_str[i] != '\0')
 	{
 		_putchar(pr_str[i]);
+		char_count++;
 		i++;
 
 		if (i == BUFF_SIZE - 1 || pr_str[i] == '\0')
 		{
-			buffer[i] = '\0';
-			b = 0;
-			while (buffer[b] != '\0')
-			{
-				_putchar(buffer[b]);
-				b++;
-			}
 			i = 0;
 		}
 	}
-	return (i);
+	return (char_count);
 }
 
 /**
