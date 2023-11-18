@@ -29,5 +29,7 @@ int handle_per_cent(void);
 int handle_b(va_list args);
 int handle_o(va_list args);
 int handle_x_X(va_list args);
+int _printf(const char *str, ...);
+int print_S(va_list args);
 
 #endif /* MAIN_H */
