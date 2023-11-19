@@ -16,7 +16,7 @@ typedef struct UniqueID
 	int (*id)();
 } unique_id;
 
-#define ID_COUNT 10
+#define ID_COUNT 13
 #define BUFF_SIZE 1024
 
 int _printf(const char *format, ...);
@@ -31,5 +31,7 @@ int handle_o(va_list args);
 int handle_x_X(va_list args);
 int _printf(const char *str, ...);
 int print_S(va_list args);
+int handle_p(va_list args);
+
 
 #endif /* MAIN_H */

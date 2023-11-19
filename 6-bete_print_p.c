@@ -4,13 +4,19 @@
  * @args: argument list
  * Return: number of characters printed
  */
-int print_p(va_list args)
+int handle_p(va_list args)
 {
-	void *home = va_arg(args, void *);
-	unsigned long bt_home = (unsigned long)home;
-	int count = 0;
-	int print = 0;
+	int count;
+	int print;
 	int shift;
+	void *home;
+	unsigned long bt_home;
+	(void)args;
+	print = 0;
+	count = 0;
+
+	home = va_arg(args, void *);
+	bt_home = (unsigned long)home;
 
 	if (home == NULL)
 		return (_putchar('(') + _putchar('n') + _putchar('i') + _putchar('l') + _putchar(')'));

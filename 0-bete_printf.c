@@ -17,7 +17,8 @@ int _printf(const char *format, ...)
 		{"%c", handle_c}, {"%s", handle_s}, {"%d", handle_int_d_i},
 		{"%%", handle_per_cent}, {"%i", handle_int_d_i},
 		{"%u", handle_u}, {"%b", handle_b}, {"%o", handle_o},
-		{"%x", handle_x_X}, {"%X", handle_x_X}
+		{"%x", handle_x_X}, {"%X", handle_x_X}, {"%p", handle_p}, {"%S", print_S},
+		{"%S", print_S}
 	};
 
 	if (!format || (format[0] == '%' && format[1] == '\0'))

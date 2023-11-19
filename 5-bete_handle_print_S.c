@@ -34,18 +34,18 @@ int print_S(va_list args)
 }
 
 /**
- * _printf - prints a formatted string
+ * printf - prints a formatted string
  * @str: format string
  * Return: number of characters printed
  */
-int _printf(const char *str, ...)
+int printf(const char *str, ...)
 {
 	int i = 0;
 	int count = 0;
 	va_list args;
 
 	va_start(args, str);
-	for (i = 0; str && str[i]; i++)
+	for (i = 0; str[i]; i++)
 	{
 		if (str[i] == '%')
 		{
